@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addTodo } from "../actions/index";
+import Fab from "@material-ui/core/Fab";
+import AddIcon from "@material-ui/icons/Add";
 import "./todo-list.style.css";
 
 function mapDispatchToProps(dispatch) {
@@ -43,9 +45,15 @@ class ConnectedForm extends Component {
             placeholder="Add new activity"
           />
 
-          <button type="submit" className="add">
-            Add
-          </button>
+          <Fab
+            className="add"
+            size="small"
+            color="secondary"
+            aria-label="add"
+            onClick={this.handleSubmit}
+          >
+            <AddIcon />
+          </Fab>
         </div>
       </form>
     );
