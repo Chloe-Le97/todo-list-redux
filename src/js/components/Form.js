@@ -28,8 +28,10 @@ class ConnectedForm extends Component {
   handleSubmit(event) {
     event.preventDefault();
     const { input } = this.state;
-    this.props.addTodo({ input });
-    this.setState({ input: "" });
+    if (input != "") {
+      this.props.addTodo({ input });
+      this.setState({ input: "" });
+    }
   }
 
   render() {
@@ -46,7 +48,7 @@ class ConnectedForm extends Component {
           />
 
           <Fab
-            className="add"
+            className="addbtn"
             size="small"
             color="secondary"
             aria-label="add"
